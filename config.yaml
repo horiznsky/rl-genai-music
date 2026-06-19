@@ -1,0 +1,27 @@
+data:
+  train_json: "data/bach_train.json"
+  test_json: "data/bach_test.json"
+  ticks_per_quarter: 4
+  encoding: "single"
+  window_size: 16
+
+model:
+  vocab_size: 170
+  embedding_dim: 128
+  hidden_size: 128
+  dropout_prob: 0.3
+  use_beat: true
+
+reward_weights:
+  joint: 0.40
+  range: 0.10
+  horizontal: 0.20
+  vertical: 0.30
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  reward_epochs: 5
+  rl_steps: 1000
+  save_interval: 10
+  device: "cuda"
